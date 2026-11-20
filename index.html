@@ -300,7 +300,8 @@
     <a class="nav-a" href="#sec-lab">⚡ Osciloscópio &amp; Sinais</a>
     <a class="nav-a" href="#sec-media">🎬 Vídeos &amp; Fotos 3D</a>
     <a class="nav-a" href="#sec-eng">🧠 Explicação Completa</a>
-    <a class="nav-a" href="#sec-audit">✅ Laudo JLCPCB</a>
+    <a class="nav-a" href="#sec-audit">✅ Laudo 15/15</a>
+    <a class="nav-a" href="ibom.html" target="_blank" style="border-color:rgba(16,185,129,0.5);color:#6ee7b7;">📋 iBOM + Estoque JLCPCB</a>
     <button class="btn-share" onclick="openShareModal()">📲 Compartilhar / QR Code</button>
   </nav>
 </header>
@@ -324,7 +325,7 @@
       <div class="stat-box"><strong>73 SMDs</strong><span>Componentes Montados</span></div>
       <div class="stat-box"><strong>43 Redes</strong><span>100% Roteadas (0 Vias Pad)</span></div>
       <div class="stat-box"><strong>125 kbps</strong><span>Fast-Flash + 12V Vpp</span></div>
-      <div class="stat-box"><strong>11 / 11</strong><span>Auditorias Pré-JLCPCB</span></div>
+      <div class="stat-box"><strong>15 / 15</strong><span>Motores &amp; APIs PASS</span></div>
     </div>
   </section>
 
@@ -616,7 +617,7 @@
         <span class="arch-num">03</span>
         <h4>Blindagem Elétrica Automotiva &amp; Dual-Power</h4>
         <ul>
-          <li><strong>Entrada Pino 16 (+12V):</strong> Fusível rearmável <code>F1</code> (PTC 500mA) + diodo Schottky <code>D1 SS34</code> contra bateria invertida (<code>-14V &rarr; -3.6mV</code>) + TVS <code>D2 SMBJ24A</code> contra <em>Load-Dump</em> de alternador + conversor Buck <code>U3 XL1509-5.0</code> (2A) + LDO <code>U4 AMS1117-3.3</code>.</li>
+          <li><strong>Entrada Pino 16 (+12V):</strong> Fusível rearmável <code>F1</code> (PTC 500mA) + diodo Schottky <code>D1 SS14</code> contra bateria invertida (<code>-14V &rarr; -3.6mV</code>) + TVS bidirecional <code>D2 SMBJ15CA</code> (grampo em <code>24,4V</code> contra <em>Load-Dump</em> protegendo <code>Q1 AO3401A</code> de 30V) + conversor Buck <code>U3 XL1509-5.0</code> (2A) + LDO <code>U4 AMS1117-3.3</code>.</li>
           <li><strong>Isolamento Dual-Power OR-ing:</strong> Diodos Schottky <code>D5</code> e <code>D6</code> permitem alimentar a placa pelo carro, pelo cabo <strong>USB Type-C traseiro</strong> na bancada, ou pelos dois simultaneamente sem retorno de corrente para o notebook!</li>
         </ul>
       </div>
@@ -679,6 +680,10 @@
             <tr><td>09</td><td>Integridade de Sinal USB 2.0 &amp; EMC</td><td>Skew diferencial D+/D-, crosstalk K-Line/ADC e indutância do loop Buck</td><td>Skew 28,9 ps · Margem Crosstalk 5,46× · Loop Buck 4,12 nH</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
             <tr><td>10</td><td>Ngspice Funcional &amp; Curtos (10 Suítes)</td><td>K-Line 10,4k/125k, L-Line, Vpp 24,4V, -14V reverso, ISO 7637-2, curtos</td><td>10/10 cenários aprovados sem dano a nenhum semicondutor</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
             <tr><td>11</td><td>Ngspice Térmico + Monte Carlo + ESD 8kV</td><td>Varredura -40°C..+105°C, 30 rodadas de tolerância, ESD IEC 61000-4-2 e Bode</td><td>4/4 suítes aprovadas (rejeição de ripple Buck = -73,4 dB)</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>12</td><td>API Ao Vivo Armazém SMT JLCPCB</td><td>Consulta HTTP em tempo real a <code>cart.jlcpcb.com</code> p/ as 30 linhas LCSC da BOM</td><td>30/30 peças em estoque imediato (0 esgotadas · BOM US$ 9,78)</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>13</td><td>Red-Team Datasheets &amp; ESP32 Strapping</td><td>IO12/IO2/IO0/EN boot guards, ADC1_CH6 vs Wi-Fi, CH340C V3=3.3V, USB-C CC1/CC2, SLOA277</td><td>17/17 regras críticas de datasheet validadas na netlist oficial</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>14</td><td>4-Way Cross-LVS + Ngspice Placa Inteira</td><td>Equivalência <code>.NET</code> vs <code>IPC-D-356A</code> vs <code>EasyEDA</code> + SPICE gerado do esquema</td><td>48/48 redes idênticas + 69 componentes convergidos juntos no Ngspice</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>15</td><td>Co-Simulador HIL ESP32 &harr; ECU Bosch</td><td>5-Baud K+L + KW1281 + Bloco Fast-Flash 125.000 bps c/ 1,1Vpp ruído RF + iBOM</td><td>BER = 0 erros em 2.838 bits (Olho = 100%) · ECU 06A906018CG lida</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
           </tbody>
         </table>
       </div>
