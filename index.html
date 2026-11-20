@@ -300,7 +300,7 @@
     <a class="nav-a" href="#sec-lab">⚡ Osciloscópio &amp; Sinais</a>
     <a class="nav-a" href="#sec-media">🎬 Vídeos &amp; Fotos 3D</a>
     <a class="nav-a" href="#sec-eng">🧠 Explicação Completa</a>
-    <a class="nav-a" href="#sec-audit">✅ Laudo 15/15</a>
+    <a class="nav-a" href="#sec-audit">✅ Laudo 17/17</a>
     <a class="nav-a" href="ibom.html" target="_blank" style="border-color:rgba(16,185,129,0.5);color:#6ee7b7;">📋 iBOM + Estoque JLCPCB</a>
     <button class="btn-share" onclick="openShareModal()">📲 Compartilhar / QR Code</button>
   </nav>
@@ -325,7 +325,7 @@
       <div class="stat-box"><strong>73 SMDs</strong><span>Componentes Montados</span></div>
       <div class="stat-box"><strong>43 Redes</strong><span>100% Roteadas (0 Vias Pad)</span></div>
       <div class="stat-box"><strong>125 kbps</strong><span>Fast-Flash + 12V Vpp</span></div>
-      <div class="stat-box"><strong>15 / 15</strong><span>Motores &amp; APIs PASS</span></div>
+      <div class="stat-box"><strong>17 / 17</strong><span>Motores &amp; APIs PASS</span></div>
     </div>
   </section>
 
@@ -684,6 +684,8 @@
             <tr><td>13</td><td>Red-Team Datasheets &amp; ESP32 Strapping</td><td>IO12/IO2/IO0/EN boot guards, ADC1_CH6 vs Wi-Fi, CH340C V3=3.3V, USB-C CC1/CC2, SLOA277</td><td>17/17 regras críticas de datasheet validadas na netlist oficial</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
             <tr><td>14</td><td>4-Way Cross-LVS + Ngspice Placa Inteira</td><td>Equivalência <code>.NET</code> vs <code>IPC-D-356A</code> vs <code>EasyEDA</code> + SPICE gerado do esquema</td><td>48/48 redes idênticas + 69 componentes convergidos juntos no Ngspice</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
             <tr><td>15</td><td>Co-Simulador HIL ESP32 &harr; ECU Bosch</td><td>5-Baud K+L + KW1281 + Bloco Fast-Flash 125.000 bps c/ 1,1Vpp ruído RF + iBOM</td><td>BER = 0 erros em 2.838 bits (Olho = 100%) · ECU 06A906018CG lida</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>16</td><td>CAM Stencil IPC-7525 &amp; Pinos Guia NPTH</td><td>Furos guia plásticos NPTH (J2/J3/J4), slots G85 PTH, janela 3x3 EPAD e Tented Vias</td><td>Erro máx 0,0003 mm · 47,9% pasta EPAD · 55/55 vias seladas</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
+            <tr><td>17</td><td>EasyEDA SCH+PCB + IPC-2581B + Firmware</td><td>Exportação EasyEDA Esquemático+PCB, Digital-Twin XML IPC-2581B e código .INO real</td><td>8/8 GPIOs + divisor ADC 5,70x idênticos entre .INO e PCB</td><td style="color:#34d399;font-weight:800">PASS</td></tr>
           </tbody>
         </table>
       </div>
